@@ -12,13 +12,18 @@ This is a simple web server that says hello to visitors and tells them their cit
    mkdir my-api
    cd my-api
    npm init -y
+   
+## Install Dependencies
 
-Install Dependencies:
+```bash
 npm install express axios
 
 
 API Endpoint
-GET /api/hello
+
+GET /api/hello <br>
+
 Query Parameters:
 
 visitor_name (optional): The name of the visitor (default is "Guest").
+
