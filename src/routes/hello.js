@@ -3,7 +3,7 @@ const axios = require('axios');
 const router = express.Router();
 
 // Replace with your actual OpenWeatherMap API key if available
-const WEATHER_API_KEY = process.env.WEATHER_API_KEY || ac589e1027154a81d2aa1f6c69d2718f;
+const WEATHER_API_KEY = process.env.WEATHER_API_KEY || "ac589e1027154a81d2aa1f6c69d2718f";
 
 router.get('/', async (req, res) => {
   const visitorName = req.query.visitor_name || 'Guest';
