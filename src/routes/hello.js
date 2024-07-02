@@ -7,7 +7,8 @@ const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
 
 router.get('/', async (req, res) => {
   const visitorName = req.query.visitor_name || 'Guest';
-  const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+  const forwardedIpsStr = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+  const clientIp = forwardedIpsStr.split(',')[0].trim();
 
   console.log(`Client IP: ${clientIp}`);
   console.log(`Weather API Key: ${WEATHER_API_KEY ? WEATHER_API_KEY.slice(0, 5) + '...' : 'Not Set'}`);
